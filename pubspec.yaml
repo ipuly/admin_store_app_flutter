@@ -1,0 +1,39 @@
+name: app_admin_toko
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.6 <3.0.0'
+
+dependencies:
+  cloud_firestore: ^4.3.1
+  cupertino_icons: ^1.0.2
+  equatable: ^2.0.5
+  firebase_auth: ^4.2.5
+  firebase_core: ^2.4.1
+  firebase_core_desktop: ^1.0.2
+  firebase_database: ^10.0.9
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.1
+  get: ^4.6.5
+  get_it: ^7.2.0
+  go_router: ^6.0.1
+  intl: any
+  provider: ^6.0.5
+  rflutter_alert: ^2.0.4
+  syncfusion_flutter_charts: ^20.4.44
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/

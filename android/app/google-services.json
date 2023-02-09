@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "47012066504",
+    "project_id": "final-project-toko-flutt-4e32a",
+    "storage_bucket": "final-project-toko-flutt-4e32a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47012066504:android:d21f496e99276a9da861fd",
+        "android_client_info": {
+          "package_name": "com.example.app_admin_toko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47012066504-2md1v1b5dfrt1vikbcf8jg7vlbbgs7of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaymTVT0cHq2ZWBKeuRc39qFnRprthgOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47012066504-2md1v1b5dfrt1vikbcf8jg7vlbbgs7of.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "47012066504-bgdm6lmqc3v1ggo78gelvpk490b2jn9o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appAdminToko"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
