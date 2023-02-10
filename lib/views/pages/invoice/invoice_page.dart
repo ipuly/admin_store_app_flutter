@@ -16,15 +16,12 @@ class InvoicePage extends StatefulWidget {
 }
 
 class _InvoicePageState extends State<InvoicePage> {
-  final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference invoice = firestore.collection('invoice');
     CollectionReference product = firestore.collection('products');
 
-    // int angka = 0;
     double total = 0;
 
     return Scaffold(
@@ -37,21 +34,37 @@ class _InvoicePageState extends State<InvoicePage> {
                 const AppBarCustom(
                   title: "Invoice",
                 ),
-                Container(
-                  margin: const EdgeInsets.all(20.0),
-                  width: MediaQuery.of(context).size.width,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.indigo,
-                        foregroundColor: Colors.white),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => AddInvoice()),
-                      );
-                    },
-                    child: const Text("Add Item"),
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      "Add Item",
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(20.0),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.indigo,
+                            foregroundColor: Colors.white),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AddInvoice(),
+                            ),
+                          );
+                        },
+                        child: const Icon(
+                          Icons.add,
+                          size: 24.0,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 Expanded(
                   child: Container(

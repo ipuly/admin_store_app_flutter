@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class RecentTransaction extends StatelessWidget {
-  // final transactionsController = Get.put(TransactionsController());
   RecentTransaction({
     super.key,
   });
@@ -67,9 +66,9 @@ class RecentTransaction extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
+            const Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: TransactionItem(),
               ),
             ),
@@ -79,11 +78,3 @@ class RecentTransaction extends StatelessWidget {
     );
   }
 }
-
-// class Test extends StatelessWidget {
-//   const Test({
-//     super.key,
-//   });
-
- 
-// }

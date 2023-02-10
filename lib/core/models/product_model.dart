@@ -31,27 +31,4 @@ class Product {
     );
     return product;
   }
-  // static Product fromSnapshot(DocumentSnapshot snap) {
-  //   Product product = Product(
-  //     id: snap.id,
-  //     name: snap["name"],
-  //     price: snap["price"],
-  //     stock: snap["stock"],
-  //   );
-  //   return product;
-  // }
-
-  // Product.fromMap(Map snapshot, String id)
-  //     : id = id,
-  //       price = snapshot['price'],
-  //       name = snapshot['name'],
-  //       stock = snapshot['stock'];
-
-  // toJson() {
-  //   return {
-  //     "name": name,
-  //     "price": price,
-  //     "stock": stock,
-  //   };
-  // }
 }

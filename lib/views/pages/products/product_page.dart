@@ -1,12 +1,10 @@
 // ignore_for_file: prefer_const_constructors, no_leading_underscores_for_local_identifiers, avoid_unnecessary_containers, prefer_interpolation_to_compose_strings
 
 import 'package:app_admin_toko/views/widgets/app_bar_custom.dart';
-import 'package:app_admin_toko/core/models/product_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class ProductPage extends StatefulWidget {
-  // final Product product;
   const ProductPage({Key? key}) : super(key: key);
 
   @override
@@ -20,14 +18,6 @@ class _ProductPageState extends State<ProductPage> {
   String name = "";
   String price = "";
   String stock = "";
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   nameController.text = widget.product.name;
-  //   priceController.text = widget.product.price as String;
-  //   stockController.text = widget.product.stock as String;
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +61,6 @@ class _ProductPageState extends State<ProductPage> {
                     physics: const ScrollPhysics(),
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
-                        // color: Colors.indigo[100],
                         child: Card(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -83,6 +72,8 @@ class _ProductPageState extends State<ProductPage> {
                                 child: Column(
                                   children: [
                                     CircleAvatar(
+                                      backgroundColor: Colors.indigo,
+                                      foregroundColor: Colors.white,
                                       radius: 80,
                                       child: Text(data.docs[index]["name"]),
                                     ),
@@ -126,9 +117,6 @@ class _ProductPageState extends State<ProductPage> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.green,
-                                    ),
                                     onPressed: () {
                                       final _formKey = GlobalKey<FormState>();
                                       nameController.text =
@@ -210,12 +198,7 @@ class _ProductPageState extends State<ProductPage> {
                                             );
                                           });
                                     },
-                                    child: const Text(
-                                      "Update",
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                      ),
-                                    ),
+                                    child: const Text("Update"),
                                   ),
                                   ElevatedButton(
                                     style: ElevatedButton.styleFrom(
@@ -241,133 +224,6 @@ class _ProductPageState extends State<ProductPage> {
                       );
                     },
                   );
-                  // return ListView.builder(
-                  //   itemCount: snapshot.data!.docs.length,
-                  //   itemBuilder: (context, index) {
-                  //     return Card(
-                  //       child: ListTile(
-                  //         leading: CircleAvatar(
-                  //           radius: 20,
-                  //           child: Text(data.docs[index]["name"][0]),
-                  //         ),
-                  //         title: Text(
-                  //           data.docs[index]["name"],
-                  //           style: TextStyle(
-                  //             fontWeight: FontWeight.bold,
-                  //           ),
-                  //         ),
-                  //         subtitle: Column(
-                  //           crossAxisAlignment: CrossAxisAlignment.start,
-                  //           children: [
-                  //             Row(
-                  //               children: [
-                  //                 Text(
-                  //                   "Price ",
-                  //                 ),
-                  //                 const SizedBox(
-                  //                   width: 5.0,
-                  //                 ),
-                  //                 Text(
-                  //                   ": ${data.docs[index]["price"]}",
-                  //                 ),
-                  //               ],
-                  //             ),
-                  //             Row(
-                  //               children: [
-                  //                 Text(
-                  //                   "Stock ",
-                  //                 ),
-                  //                 const SizedBox(
-                  //                   width: 1.0,
-                  //                 ),
-                  //                 Text(
-                  //                   ": ${data.docs[index]["stock"]}",
-                  //                 ),
-                  //               ],
-                  //             ),
-                  //           ],
-                  //         ),
-                  //         trailing: Row(
-                  //           mainAxisSize: MainAxisSize.min,
-                  //           children: [
-                  //             IconButton(
-                  //               onPressed: () {
-                  //                 final _formKey = GlobalKey<FormState>();
-                  //                 nameController.text = data.docs[index]["name"];
-                  //                 priceController.text = data.docs[index]["price"];
-                  //                 stockController.text = data.docs[index]["stock"];
-                  //                 String stock = "";
-                  //                 showDialog(
-                  //                     context: context,
-                  //                     builder: (builder) {
-                  //                       return AlertDialog(
-                  //                         title: Text("Edit Product"),
-                  //                         content: Form(
-                  //                           key: _formKey,
-                  //                           child: Column(
-                  //                             mainAxisSize: MainAxisSize.min,
-                  //                             children: [
-                  //                               TextFormField(
-                  //                                 controller: nameController,
-                  //                                 decoration: InputDecoration(
-                  //                                   hintText: "Name",
-                  //                                   labelText: "Name",
-                  //                                 ),
-                  //                               ),
-                  //                               TextFormField(
-                  //                                 controller: priceController,
-                  //                                 decoration: InputDecoration(
-                  //                                   hintText: "Price",
-                  //                                   labelText: "Price",
-                  //                                 ),
-                  //                               ),
-                  //                               TextFormField(
-                  //                                 controller: stockController,
-                  //                                 decoration: InputDecoration(
-                  //                                   hintText: "Stock",
-                  //                                   labelText: "Stock",
-                  //                                 ),
-                  //                               ),
-                  //                               const SizedBox(
-                  //                                 height: 20.0,
-                  //                               ),
-                  //                               ElevatedButton(
-                  //                                 onPressed: () async {
-                  //                                   await products
-                  //                                       .doc(data.docs[index].id)
-                  //                                       .update({
-                  //                                     'name': nameController.text,
-                  //                                     'price': priceController.text,
-                  //                                     'stock': stockController.text,
-                  //                                   });
-                  //                                   Navigator.pop(context);
-                  //                                 },
-                  //                                 child: const Text("Update"),
-                  //                               )
-                  //                             ],
-                  //                           ),
-                  //                         ),
-                  //                       );
-                  //                     });
-                  //               },
-                  //               icon: const Icon(
-                  //                 Icons.edit,
-                  //               ),
-                  //             ),
-                  //             IconButton(
-                  //               onPressed: () async {
-                  //                 await products.doc(data.docs[index].id).delete();
-                  //               },
-                  //               icon: const Icon(
-                  //                 Icons.delete,
-                  //               ),
-                  //             ),
-                  //           ],
-                  //         ),
-                  //       ),
-                  //     );
-                  //   },
-                  // );
                 },
               ),
             ),

@@ -18,9 +18,6 @@ class App extends StatelessWidget {
         ChangeNotifierProvider(
           create: (BuildContext context) => ProductViewModel(),
         ),
-        // ChangeNotifierProvider(
-        //   create: (BuildContext context) => CRUDModel(),
-        // ),
         ChangeNotifierProvider(
           create: (BuildContext context) => Quantity(),
         ),

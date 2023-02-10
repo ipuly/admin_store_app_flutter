@@ -18,7 +18,7 @@ class _LoadingPageState extends State<LoadingPage> {
     Timer(
       const Duration(seconds: 1),
       () {
-        Navigator.popAndPushNamed(context, RouteManager.homePage);
+        Navigator.popAndPushNamed(context, RouteManager.loginPage);
       },
     );
   }
